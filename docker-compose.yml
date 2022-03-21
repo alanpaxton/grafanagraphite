@@ -1,5 +1,21 @@
 # from
 # https://www.linode.com/docs/guides/install-graphite-and-grafana/#docker-compose-configuration-for-graphite-and-grafana
+#
+# You will need to create these 2 volumes 
+# $ docker volume create --name=grafana-volume
+# $ docker volume create --name=graphite-volume
+#
+# Then you can start everything
+# $ docker-compose up -d
+# And you should see 2 machines running
+# $ docker ps
+#
+# Allow the Grafana http port
+# $ sudo ufw allow proto tcp from any to any port 3000
+#
+# Allow the Python pickle port for Graphite
+# $ sudo ufw allow proto tcp from any to any port 2004
+#
 version: "3"
 services:
   grafana:
