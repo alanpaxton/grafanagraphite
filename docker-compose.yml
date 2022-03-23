@@ -35,7 +35,6 @@ services:
     restart: always
     ports:
       - "2003-2004:2003-2004"
-      - 8080:8080
     networks:
       - grafana-net
     volumes:
